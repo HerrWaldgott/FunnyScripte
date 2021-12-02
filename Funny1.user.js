@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Funny1
-// @version      1.0.0
+// @version      2.0.0
 // @author       HerrWaldgott
 // @include      *://www.leitstellenspiel.de/*
 // @grant        none
@@ -9,9 +9,12 @@
 (function() {
     'use strict';
 
-    var user = username;
+    var user = '';
+    if (username) {
+        var user = 'Hallo ' + username + ', mein Liebster!<br>';
+    }
 
-    $('body').empty().append('Hallo ' + username + ', mein Liebster!<br><canvas id="myCanvas" width="' + $(document).width() + '" height="' + $(document).height() + '"></canvas>');
+    $('body').empty().append(user + '<canvas id="myCanvas" width="' + $(document).width() + '" height="' + $(document).height() + '"></canvas>');
 
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
