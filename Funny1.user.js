@@ -10,8 +10,8 @@
     'use strict';
 
     var user = '';
-    if (username) {
-        var user = 'Hallo ' + username + ', mein Liebster!<br>';
+    if (typeof username !== 'undefined') {
+        user = 'Hallo ' + username + ', mein Liebster!<br>';
     }
 
     $('body').empty().append(user + '<canvas id="myCanvas" width="' + $(document).width() + '" height="' + $(document).height() + '"></canvas>');
